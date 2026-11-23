@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+    <title id="title">Ilustrasi aplikasi pencatatan keuangan</title>
+    <desc id="desc">Ponsel menampilkan saldo, grafik arus kas, dan daftar transaksi, dikelilingi kartu pemasukan serta notifikasi.</desc>
+
+    <defs>
+        <linearGradient id="balanceGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2563eb"/>
+            <stop offset="1" stop-color="#4338ca"/>
+        </linearGradient>
+        <linearGradient id="phoneEdge" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1e293b"/>
+            <stop offset="1" stop-color="#0f172a"/>
+        </linearGradient>
+        <linearGradient id="barBlue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#60a5fa"/>
+            <stop offset="1" stop-color="#2563eb"/>
+        </linearGradient>
+        <linearGradient id="barGreen" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4ade80"/>
+            <stop offset="1" stop-color="#16a34a"/>
+        </linearGradient>
+        <linearGradient id="barRed" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f87171"/>
+            <stop offset="1" stop-color="#dc2626"/>
+        </linearGradient>
+        <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.22"/>
+        </filter>
+        <filter id="smallShadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.16"/>
+        </filter>
+    </defs>
+
+    <!-- Dekorasi latar -->
+    <circle cx="620" cy="92" r="190" fill="#ffffff" opacity="0.055"/>
+    <circle cx="76" cy="650" r="230" fill="#ffffff" opacity="0.045"/>
+    <circle cx="628" cy="594" r="72" fill="#93c5fd" opacity="0.14"/>
+    <path d="M104 498c-52-72-2-186 94-232" fill="none" stroke="#bfdbfe" stroke-width="2"
+        stroke-dasharray="2 12" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Ponsel -->
+    <g transform="rotate(-5 360 360)">
+        <rect x="196" y="66" width="330" height="588" rx="46" fill="#0b1220" opacity="0.28" filter="url(#softShadow)"/>
+        <rect x="204" y="56" width="312" height="584" rx="40" fill="url(#phoneEdge)"/>
+        <rect x="216" y="68" width="288" height="560" rx="28" fill="#f8fafc"/>
+        <rect x="320" y="78" width="80" height="8" rx="4" fill="#cbd5e1"/>
+
+        <!-- Header aplikasi -->
+        <circle cx="248" cy="122" r="16" fill="#dbeafe"/>
+        <circle cx="248" cy="122" r="7" fill="#2563eb"/>
+        <rect x="274" y="112" width="92" height="8" rx="4" fill="#334155"/>
+        <rect x="274" y="127" width="58" height="6" rx="3" fill="#94a3b8"/>
+        <circle cx="474" cy="122" r="14" fill="#eef2ff"/>
+        <path d="M474 115v5m0 5h.01" stroke="#4338ca" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Kartu saldo -->
+        <rect x="232" y="152" width="256" height="126" rx="18" fill="url(#balanceGradient)"/>
+        <circle cx="452" cy="180" r="48" fill="#ffffff" opacity="0.09"/>
+        <circle cx="478" cy="246" r="30" fill="#ffffff" opacity="0.06"/>
+        <text x="252" y="184" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#dbeafe">Total Saldo</text>
+        <text x="252" y="218" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700"
+            fill="#ffffff">Rp 12.500.000</text>
+        <text x="252" y="248" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#bbf7d0">+8,2% dari bulan lalu</text>
+
+        <!-- Grafik -->
+        <rect x="232" y="292" width="256" height="124" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="248" y="318" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748b">Arus Kas 7 Hari</text>
+        <text x="472" y="318" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="10"
+            fill="#94a3b8">Bulan ini</text>
+
+        <g>
+            <rect x="250" y="348" width="10" height="42" rx="3" fill="url(#barGreen)"/>
+            <rect x="262" y="368" width="10" height="22" rx="3" fill="url(#barRed)"/>
+            <rect x="284" y="354" width="10" height="36" rx="3" fill="url(#barGreen)"/>
+            <rect x="296" y="374" width="10" height="16" rx="3" fill="url(#barRed)"/>
+            <rect x="318" y="342" width="10" height="48" rx="3" fill="url(#barGreen)"/>
+            <rect x="330" y="364" width="10" height="26" rx="3" fill="url(#barRed)"/>
+            <rect x="352" y="358" width="10" height="32" rx="3" fill="url(#barGreen)"/>
+            <rect x="364" y="378" width="10" height="12" rx="3" fill="url(#barRed)"/>
+            <rect x="386" y="336" width="10" height="54" rx="3" fill="url(#barGreen)"/>
+            <rect x="398" y="370" width="10" height="20" rx="3" fill="url(#barRed)"/>
+            <rect x="420" y="346" width="10" height="44" rx="3" fill="url(#barGreen)"/>
+            <rect x="432" y="362" width="10" height="28" rx="3" fill="url(#barRed)"/>
+            <rect x="454" y="354" width="10" height="36" rx="3" fill="url(#barGreen)"/>
+            <rect x="466" y="376" width="10" height="14" rx="3" fill="url(#barRed)"/>
+        </g>
+        <line x1="244" y1="393" x2="476" y2="393" stroke="#e2e8f0" stroke-width="1.5"/>
+
+        <!-- Transaksi -->
+        <g>
+            <circle cx="252" cy="432" r="15" fill="#dcfce7"/>
+            <path d="M252 439v-14m0 0l-5 5m5-5l5 5" stroke="#16a34a" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="278" y="429" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700"
+                fill="#0f172a">Gaji bulanan</text>
+            <text x="278" y="444" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#94a3b8">Pemasukan</text>
+            <text x="472" y="436" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11"
+                font-weight="700" fill="#16a34a">+Rp 5.000.000</text>
+        </g>
+        <g>
+            <circle cx="252" cy="472" r="15" fill="#fee2e2"/>
+            <path d="M252 465v14m0 0l-5-5m5 5l5-5" stroke="#dc2626" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="278" y="469" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700"
+                fill="#0f172a">Makan siang</text>
+            <text x="278" y="484" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#94a3b8">Konsumsi</text>
+            <text x="472" y="476" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11"
+                font-weight="700" fill="#dc2626">-Rp 45.000</text>
+        </g>
+        <g>
+            <circle cx="252" cy="512" r="15" fill="#fee2e2"/>
+            <path d="M252 505v14m0 0l-5-5m5 5l5-5" stroke="#dc2626" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="278" y="509" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700"
+                fill="#0f172a">Transportasi</text>
+            <text x="278" y="524" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#94a3b8">Transportasi</text>
+            <text x="472" y="516" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="11"
+                font-weight="700" fill="#dc2626">-Rp 25.000</text>
+        </g>
+
+        <!-- Navigasi bawah -->
+        <rect x="248" y="568" width="224" height="40" rx="14" fill="#eef2ff"/>
+        <circle cx="280" cy="588" r="9" fill="#2563eb"/>
+        <circle cx="332" cy="588" r="7" fill="#cbd5e1"/>
+        <circle cx="384" cy="588" r="7" fill="#cbd5e1"/>
+        <circle cx="436" cy="588" r="7" fill="#cbd5e1"/>
+    </g>
+
+    <!-- Kartu pemasukan -->
+    <g filter="url(#smallShadow)">
+        <rect x="42" y="168" width="212" height="96" rx="20" fill="#ffffff" opacity="0.97"/>
+        <circle cx="78" cy="216" r="22" fill="#dcfce7"/>
+        <path d="M78 226v-20m0 0l-7 7m7-7l7 7" stroke="#16a34a" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="112" y="206" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#64748b">Pemasukan</text>
+        <text x="112" y="231" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700"
+            fill="#16a34a">+Rp 500.000</text>
+        <text x="112" y="248" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#94a3b8">Kas Utama</text>
+    </g>
+
+    <!-- Kartu notifikasi -->
+    <g filter="url(#smallShadow)">
+        <rect x="506" y="182" width="176" height="86" rx="18" fill="#ffffff" opacity="0.97"/>
+        <circle cx="538" cy="225" r="18" fill="#e0e7ff"/>
+        <path d="M538 214a5 5 0 0110 0c0 5 2 8 4 10h-18c2-2 4-5 4-10z" fill="none" stroke="#4338ca"
+            stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M535 228a3 3 0 006 0" fill="none" stroke="#4338ca" stroke-width="1.6" stroke-linecap="round"/>
+        <text x="566" y="218" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#64748b">Notifikasi</text>
+        <text x="566" y="236" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700"
+            fill="#0f172a">Arus kas masuk</text>
+        <text x="566" y="252" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#16a34a">+Rp 1.250.000</text>
+    </g>
+
+    <!-- Koin -->
+    <g transform="translate(110 566)" filter="url(#smallShadow)">
+        <ellipse cx="0" cy="38" rx="48" ry="14" fill="#92400e" opacity="0.22"/>
+        <circle cx="0" cy="0" r="42" fill="#fbbf24"/>
+        <circle cx="0" cy="0" r="34" fill="#f59e0b"/>
+        <text x="0" y="7" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18"
+            font-weight="700" fill="#78350f">Rp</text>
+    </g>
+</svg>

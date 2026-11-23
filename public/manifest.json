@@ -1,0 +1,35 @@
+{
+    "name": "Catat Keuangan - Cashflow Tracker",
+    "short_name": "Catat Keuangan",
+    "description": "Pencatatan keuangan dan arus kas yang cepat, dengan notifikasi langsung di perangkat.",
+    "id": "/dashboard",
+    "start_url": "/dashboard?source=pwa",
+    "scope": "/",
+    "display": "standalone",
+    "display_override": ["standalone", "minimal-ui"],
+    "orientation": "portrait-primary",
+    "background_color": "#f8f9fa",
+    "theme_color": "#2563eb",
+    "lang": "id",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-maskable-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
