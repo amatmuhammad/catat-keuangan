@@ -53,10 +53,38 @@ class PwaTest extends TestCase
             ->assertOk()
             ->assertSee('rel="manifest"', false)
             ->assertSee('id="pwaInstallBanner"', false)
-            ->assertSee('assets/js/pwa-installer.js', false)
+            ->assertSee('assets/js/pwa-installer.js?v=', false)
+            ->assertSee('assets/css/cashflow.css?v=', false)
             ->assertSee('name="webpush-public-key"', false)
             ->assertSee('test-public-key', false)
             ->assertSee('id="enablePushBtn"', false);
+    }
+
+    public function test_only_the_valid_manifest_is_linked(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get(route('dashboard'));
+
+        $response->assertOk()
+            ->assertSee('href="'.asset('manifest.json').'"', false)
+            ->assertDontSee('assets/images/favicon/manifest.json', false)
+            ->assertDontSee('android-icon-', false);
+
+        $this->assertSame(1, substr_count($response->getContent(), 'rel="manifest"'));
+    }
+
+    public function test_install_button_and_guide_are_available_on_authenticated_pages(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)->get(route('dashboard'))
+            ->assertOk()
+            ->assertSee('<li id="installAppNavItem">', false)
+            ->assertSee('id="installAppBtn"', false)
+            ->assertSee('id="installAppModal"', false)
+            ->assertSee('id="installAppConfirmBtn"', false)
+            ->assertSee('Pasang Catat Keuangan', false);
     }
 
     public function test_guests_see_the_login_page_with_pwa_meta_tags(): void
@@ -64,7 +92,10 @@ class PwaTest extends TestCase
         $this->get(route('login'))
             ->assertOk()
             ->assertSee('rel="manifest"', false)
-            ->assertSee('assets/js/pwa-installer.js', false);
+            ->assertSee('assets/js/pwa-installer.js?v=', false)
+            ->assertSee('id="installAppBtn"', false)
+            ->assertSee('id="installAppModal"', false)
+            ->assertSee('Pasang Aplikasi', false);
     }
 
     /**

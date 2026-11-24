@@ -54,6 +54,6 @@
     </a>
 
     @include('partials.scripts')
-    <script src="{{ asset('assets/js/pwa-installer.js') }}" defer></script>
+    <script src="{{ asset('assets/js/pwa-installer.js') }}?v={{ filemtime(public_path('assets/js/pwa-installer.js')) }}" defer></script>
 </body>
 </html>

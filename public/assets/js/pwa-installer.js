@@ -25,10 +25,21 @@
     window.addEventListener('appinstalled', function () {
         deferredPrompt = null;
         hideInstallBanner();
+
+        const navItem = document.getElementById('installAppNavItem');
+        if (navItem) {
+            navItem.classList.add('d-none');
+        }
+
+        const installButton = document.getElementById('installAppBtn');
+        if (installButton && !navItem) {
+            installButton.classList.add('d-none');
+        }
     });
 
     document.addEventListener('DOMContentLoaded', function () {
         initInstallPrompt();
+        initInstallButton();
         initPushNotifications();
     });
 
@@ -84,18 +95,8 @@
 
         if (installButton) {
             installButton.addEventListener('click', async function () {
-                if (!deferredPrompt) {
-                    return;
-                }
-
-                deferredPrompt.prompt();
-
-                try {
-                    await deferredPrompt.userChoice;
-                } finally {
-                    deferredPrompt = null;
-                    banner.classList.add('d-none');
-                }
+                await triggerInstall();
+                banner.classList.add('d-none');
             });
         }
 
@@ -105,6 +106,136 @@
 
         if (closeButton) {
             closeButton.addEventListener('click', dismissBanner);
+        }
+    }
+
+    async function triggerInstall() {
+        if (!deferredPrompt) {
+            return false;
+        }
+
+        const prompt = deferredPrompt;
+        deferredPrompt = null;
+        prompt.prompt();
+
+        try {
+            await prompt.userChoice;
+        } catch (error) {
+            // Pemasangan dibatalkan pengguna.
+        }
+
+        document.dispatchEvent(new CustomEvent('pwa:installed-prompt'));
+        return true;
+    }
+
+    function initInstallButton() {
+        const navItem = document.getElementById('installAppNavItem');
+        const modal = document.getElementById('installAppModal');
+        const confirmButton = document.getElementById('installAppConfirmBtn');
+        const autoSection = document.getElementById('installAutoSection');
+        const manualSection = document.getElementById('installManualSection');
+        const browserHint = document.getElementById('installBrowserHint');
+
+        const installButton = document.getElementById('installAppBtn');
+
+        // Sembunyikan tombol jika aplikasi sudah terpasang (atau tidak ada tombol).
+        if (standalone || !installButton) {
+            return;
+        }
+
+        if (navItem) {
+            navItem.classList.remove('d-none');
+        }
+
+        const userAgent = window.navigator.userAgent;
+        const isIos = /iphone|ipad|ipod/i.test(userAgent);
+        const isChrome = /chrome|crios/i.test(userAgent) && !/edg|opr|samsungbrowser/i.test(userAgent);
+
+        if (browserHint) {
+            if (isIos) {
+                browserHint.innerHTML = 'Ketuk ikon <span class="fw-semibold">Bagikan</span> di bawah, lalu pilih ' +
+                    '<span class="fw-semibold">Tambah ke Layar Utama</span>.';
+            } else if (isChrome) {
+                browserHint.innerHTML = 'Ketuk ikon <span class="fw-semibold">⋮</span> (titik tiga) di pojok kanan atas ' +
+                    'Chrome, lalu pilih <span class="fw-semibold">Pasang aplikasi</span>.';
+            }
+        }
+
+        function refreshModalSections() {
+            if (!autoSection || !manualSection) {
+                return;
+            }
+
+            if (deferredPrompt) {
+                autoSection.classList.remove('d-none');
+                manualSection.classList.add('d-none');
+            } else {
+                autoSection.classList.add('d-none');
+                manualSection.classList.remove('d-none');
+            }
+        }
+
+        let modalBackdrop = null;
+
+        function openInstallModal() {
+            if (!modal) {
+                return;
+            }
+
+            refreshModalSections();
+
+            modalBackdrop = document.createElement('div');
+            modalBackdrop.className = 'modal-backdrop show';
+            modalBackdrop.id = 'installModalBackdrop';
+            document.body.appendChild(modalBackdrop);
+
+            modal.style.display = 'block';
+            modal.classList.add('show');
+            modal.removeAttribute('aria-hidden');
+            document.body.classList.add('modal-open');
+
+            modalBackdrop.addEventListener('click', closeInstallModal);
+        }
+
+        function closeInstallModal() {
+            if (!modal) {
+                return;
+            }
+
+            modal.style.display = '';
+            modal.classList.remove('show');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+
+            if (modalBackdrop) {
+                modalBackdrop.remove();
+                modalBackdrop = null;
+            }
+        }
+
+        installButton.addEventListener('click', openInstallModal);
+
+        document.addEventListener('pwa:installable', refreshModalSections);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && modal && modal.classList.contains('show')) {
+                closeInstallModal();
+            }
+        });
+
+        if (modal) {
+            modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(function (button) {
+                button.addEventListener('click', closeInstallModal);
+            });
+        }
+
+        if (confirmButton) {
+            confirmButton.addEventListener('click', async function () {
+                const triggered = await triggerInstall();
+                if (triggered) {
+                    closeInstallModal();
+                }
+            });
         }
     }
 

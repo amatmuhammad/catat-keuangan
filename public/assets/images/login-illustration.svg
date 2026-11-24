@@ -31,13 +31,6 @@
         </filter>
     </defs>
 
-    <!-- Dekorasi latar -->
-    <circle cx="620" cy="92" r="190" fill="#ffffff" opacity="0.055"/>
-    <circle cx="76" cy="650" r="230" fill="#ffffff" opacity="0.045"/>
-    <circle cx="628" cy="594" r="72" fill="#93c5fd" opacity="0.14"/>
-    <path d="M104 498c-52-72-2-186 94-232" fill="none" stroke="#bfdbfe" stroke-width="2"
-        stroke-dasharray="2 12" stroke-linecap="round" opacity="0.6"/>
-
     <!-- Ponsel -->
     <g transform="rotate(-5 360 360)">
         <rect x="196" y="66" width="330" height="588" rx="46" fill="#0b1220" opacity="0.28" filter="url(#softShadow)"/>

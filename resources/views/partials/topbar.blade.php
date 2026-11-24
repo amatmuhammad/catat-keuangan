@@ -67,6 +67,9 @@
                 </a>
             </li>
 
+            <!-- Pasang aplikasi / pintasan layar utama -->
+            @include('components.install-app-button')
+
             <!-- Pengalih akun bersama -->
             @if (isset($currentAccount, $userAccounts))
                 @php

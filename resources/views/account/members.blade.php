@@ -90,7 +90,7 @@
                             <input type="email" id="member_email" name="email" value="{{ old('email') }}"
                                 class="form-control @error('email') is-invalid @enderror" placeholder="nama@email.com" required>
                             @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
+                                <div class="invalid-feedback">{{ $errors->first('email') }}</div>
                             @enderror
 
                             <button type="submit" class="btn btn-primary w-100 mt-3"

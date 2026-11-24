@@ -1,6 +1,6 @@
 <!-- Libs JS -->
-<script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
+<script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}?v={{ filemtime(public_path('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')) }}"></script>
+<script src="{{ asset('assets/libs/simplebar/dist/simplebar.min.js') }}?v={{ filemtime(public_path('assets/libs/simplebar/dist/simplebar.min.js')) }}"></script>
 
 <!-- Helper warna chart agar ikut tema aktif (dipakai halaman yang punya chart) -->
 <script>
@@ -18,7 +18,7 @@
 </script>
 
 <!-- Theme JS -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}?v={{ filemtime(public_path('assets/js/main.js')) }}"></script>
 <script src="{{ asset('assets/js/live-summary.js') }}" defer></script>
 
 {{-- Script khusus per halaman: @push('scripts') ... @endpush --}}

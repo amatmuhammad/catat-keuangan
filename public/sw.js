@@ -1,4 +1,4 @@
-const CACHE_NAME = 'catat-keuangan-v1';
+const CACHE_NAME = 'catat-keuangan-v4';
 
 const STATIC_ASSETS = [
     '/manifest.json',
@@ -11,7 +11,8 @@ const STATIC_ASSETS = [
     '/assets/libs/simplebar/dist/simplebar.min.js',
     '/assets/libs/@tabler/icons-webfont/tabler-icons.min.css',
     '/icons/icon-192x192.png',
-    '/icons/icon-512x512.png'
+    '/icons/icon-512x512.png',
+    '/icons/icon-maskable-512x512.png'
 ];
 
 self.addEventListener('install', function (event) {
