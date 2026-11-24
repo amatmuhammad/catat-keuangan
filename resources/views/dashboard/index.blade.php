@@ -187,11 +187,11 @@
                         <h5 class="mb-0">Arus Kas 7 Hari Terakhir</h5>
                         <div class="d-flex align-items-center gap-3 small">
                             <span class="d-inline-flex align-items-center gap-1">
-                                <span class="d-inline-block rounded-circle" style="width:8px;height:8px;background:#16a34a"></span>
+                                <span class="d-inline-block rounded-circle" style="width:8px;height:8px;background:#1a6be0"></span>
                                 Pemasukan
                             </span>
                             <span class="d-inline-flex align-items-center gap-1">
-                                <span class="d-inline-block rounded-circle" style="width:8px;height:8px;background:#dc2626"></span>
+                                <span class="d-inline-block rounded-circle" style="width:8px;height:8px;background:#f5a623"></span>
                                 Pengeluaran
                             </span>
                         </div>
@@ -375,7 +375,7 @@
                     { name: 'Pemasukan', data: chartData.income },
                     { name: 'Pengeluaran', data: chartData.expense }
                 ],
-                colors: ['#16a34a', '#dc2626'],
+                colors: ['#1a6be0', '#f5a623'],
                 plotOptions: {
                     bar: { borderRadius: 5, columnWidth: '46%' }
                 },

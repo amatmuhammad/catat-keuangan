@@ -1,4 +1,4 @@
-const CACHE_NAME = 'catat-keuangan-v4';
+const CACHE_NAME = 'catat-keuangan-v5';
 
 const STATIC_ASSETS = [
     '/manifest.json',

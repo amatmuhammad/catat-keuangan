@@ -3,8 +3,8 @@
        Halaman autentikasi (login & register)
        ========================================================= */
     .auth-layout {
-        --auth-accent: #2563eb;
-        --auth-accent-soft: rgba(37, 99, 235, 0.12);
+        --auth-accent: #1a6be0;
+        --auth-accent-soft: rgba(26, 107, 224, 0.12);
         --auth-gold: #fbbf24;
         --auth-gold-soft: #fcd34d;
         --auth-emerald: #10b981;

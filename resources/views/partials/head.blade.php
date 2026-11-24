@@ -11,9 +11,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon .png') }}" />
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/images/favicon .png') }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icons/icon-192x192.png') }}" />
-    <meta name="theme-color" content="#1E3A8A" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
-    <meta name="msapplication-TileColor" content="#1E3A8A">
+    <meta name="theme-color" content="#1a6be0" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1a33" media="(prefers-color-scheme: dark)">
+    <meta name="msapplication-TileColor" content="#1a6be0">
     <meta name="msapplication-TileImage" content="{{ asset('assets/images/favicon/ms-icon-144x144.png') }}" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />

@@ -3,9 +3,61 @@
    ========================================================= */
 
 :root {
-    --cf-income: #16a34a;
-    --cf-expense: #dc2626;
+    /* Palet brand Saku Kas (mengikuti logo) */
+    --cf-brand-navy: #0b2a6b;
+    --cf-brand-blue: #1a6be0;
+    --cf-brand-blue-bright: #2f86f6;
+    --cf-brand-orange: #f5a623;
+
+    --cf-income: var(--cf-brand-blue);
+    --cf-expense: var(--cf-brand-orange);
     --cf-bottom-nav-height: 68px;
+
+    /* Selaraskan token tema Dasher dengan warna logo */
+    --ds-primary: #1a6be0;
+    --ds-primary-rgb: 26, 107, 224;
+    --ds-primary-lighter: #dbeafe;
+    --ds-primary-light: #93c5fd;
+    --ds-primary-dark: #0b2a6b;
+    --ds-primary-darker: #071a45;
+    --ds-primary-text-emphasis: #0b2a6b;
+    --ds-primary-bg-subtle: #e6f0fd;
+    --ds-primary-border-subtle: #a9cbff;
+    --ds-link-color: #1a6be0;
+    --ds-link-color-rgb: 26, 107, 224;
+    --ds-link-hover-color: #0b2a6b;
+    --ds-link-hover-color-rgb: 11, 42, 107;
+    --ds-focus-ring-color: rgba(26, 107, 224, 0.25);
+
+    /* Alias agar komponen cashflow.css yang memakai variabel Bootstrap ikut aktif */
+    --bs-primary: var(--ds-primary);
+    --bs-primary-rgb: var(--ds-primary-rgb);
+    --bs-primary-bg-subtle: var(--ds-primary-bg-subtle);
+    --bs-body-bg: var(--ds-body-bg);
+    --bs-body-color: var(--ds-body-color);
+    --bs-secondary-color: var(--ds-secondary-color);
+    --bs-tertiary-bg: var(--ds-tertiary-bg);
+    --bs-border-color: var(--ds-border-color);
+}
+
+[data-bs-theme="dark"] {
+    --cf-income: #6aa6ff;
+    --cf-expense: #ffc45c;
+
+    --ds-primary: #4f8ef7;
+    --ds-primary-rgb: 79, 142, 247;
+    --ds-primary-lighter: #0a1a33;
+    --ds-primary-light: #1e3a6b;
+    --ds-primary-dark: #93c5fd;
+    --ds-primary-darker: #dbeafe;
+    --ds-primary-text-emphasis: #a9cbff;
+    --ds-primary-bg-subtle: #0a1a33;
+    --ds-primary-border-subtle: #1e3a6b;
+    --ds-link-color: #7ab0ff;
+    --ds-link-color-rgb: 122, 176, 255;
+    --ds-link-hover-color: #a9cbff;
+    --ds-link-hover-color-rgb: 169, 203, 255;
+    --ds-focus-ring-color: rgba(79, 142, 247, 0.3);
 }
 
 body.app-shell {
@@ -26,15 +78,15 @@ body.app-shell {
 }
 
 [data-bs-theme="dark"] .money-income {
-    color: #4ade80;
+    color: var(--cf-income);
 }
 
 [data-bs-theme="dark"] .money-expense {
-    color: #f87171;
+    color: var(--cf-expense);
 }
 
 .balance-card {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 45%, #4338ca 100%);
+    background: linear-gradient(135deg, #0b2a6b 0%, #1a6be0 58%, #2f86f6 100%);
     color: #fff;
     overflow: hidden;
     position: relative;
@@ -684,11 +736,11 @@ filter: brightness(1.2);
 }
 
 [data-bs-theme="dark"] .calendar-income {
-    color: #4ade80;
+    color: var(--cf-income);
 }
 
 [data-bs-theme="dark"] .calendar-expense {
-    color: #f87171;
+    color: var(--cf-expense);
 }
 
 .calendar-note {
@@ -746,4 +798,97 @@ filter: brightness(1.2);
     .page-title {
         font-size: 1.5rem;
     }
+}
+
+/* =========================================================
+   Brand Saku Kas
+   ========================================================= */
+
+.brand-logo-icon {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    flex: 0 0 38px;
+}
+
+.site-logo-text {
+    color: var(--cf-brand-navy);
+    letter-spacing: -0.01em;
+}
+
+.brand-name-accent {
+    color: var(--cf-brand-blue);
+}
+
+[data-bs-theme="dark"] .site-logo-text {
+    color: #e8f1fd;
+}
+
+[data-bs-theme="dark"] .brand-name-accent {
+    color: #6aa6ff;
+}
+
+/* Tombol primary mengikuti warna biru logo (tema bawaan memakai hijau hardcode) */
+.btn-primary {
+    --ds-btn-bg: var(--cf-brand-blue);
+    --ds-btn-border-color: var(--cf-brand-blue);
+    --ds-btn-hover-bg: #1558bd;
+    --ds-btn-hover-border-color: #1352b1;
+    --ds-btn-focus-shadow-rgb: 26, 107, 224;
+    --ds-btn-active-bg: #1352b1;
+    --ds-btn-active-border-color: #114b9f;
+    --ds-btn-disabled-bg: var(--cf-brand-blue);
+    --ds-btn-disabled-border-color: var(--cf-brand-blue);
+}
+
+.btn-outline-primary {
+    --ds-btn-color: var(--cf-brand-blue);
+    --ds-btn-border-color: var(--cf-brand-blue);
+    --ds-btn-hover-bg: var(--cf-brand-blue);
+    --ds-btn-hover-border-color: var(--cf-brand-blue);
+    --ds-btn-active-bg: #1352b1;
+    --ds-btn-active-border-color: #114b9f;
+    --ds-btn-focus-shadow-rgb: 26, 107, 224;
+}
+
+/* Kartu statistik mengikuti warna logo */
+.stat-card-income .icon-shape {
+    background: rgba(26, 107, 224, 0.12) !important;
+    color: var(--cf-brand-blue) !important;
+}
+
+.stat-card-income .stat-label {
+    color: var(--cf-brand-blue) !important;
+}
+
+.stat-card-expense .icon-shape {
+    background: rgba(245, 166, 35, 0.16) !important;
+    color: #b26f00 !important;
+}
+
+.stat-card-expense .stat-label {
+    color: #b26f00 !important;
+}
+
+[data-bs-theme="dark"] .stat-card-expense .icon-shape {
+    color: #ffc45c !important;
+}
+
+[data-bs-theme="dark"] .stat-card-expense .stat-label {
+    color: #ffc45c !important;
+}
+
+/* Ikon transaksi mengikuti warna logo */
+.transaction-icon.bg-success-subtle {
+    background: rgba(26, 107, 224, 0.12) !important;
+    color: var(--cf-brand-blue) !important;
+}
+
+.transaction-icon.bg-danger-subtle {
+    background: rgba(245, 166, 35, 0.16) !important;
+    color: #b26f00 !important;
+}
+
+[data-bs-theme="dark"] .transaction-icon.bg-danger-subtle {
+    color: #ffc45c !important;
 }
