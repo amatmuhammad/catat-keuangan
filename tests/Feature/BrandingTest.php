@@ -33,6 +33,19 @@ class BrandingTest extends TestCase
             ->assertSee('background:#f5a623', false);
     }
 
+    public function test_dashboard_cards_use_branded_style_classes(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)->get(route('dashboard'))
+            ->assertOk()
+            ->assertSee('stat-card-personal', false)
+            ->assertSee('dashboard-card', false)
+            ->assertSee('balance-card', false)
+            ->assertSee('stat-card-income', false)
+            ->assertSee('stat-card-expense', false);
+    }
+
     public function test_brand_logo_icon_exists_on_disk(): void
     {
         $this->assertFileExists(public_path('assets/images/brand/logo/saku-kas-icon.png'));

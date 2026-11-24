@@ -74,7 +74,7 @@
         </div>
 
         <div class="col">
-            <div class="card card-lg dashboard-stat-card h-100">
+            <div class="card card-lg dashboard-stat-card stat-card-personal h-100">
                 <div class="card-body d-flex flex-column gap-5">
                     <div class="d-flex align-items-center gap-3">
                         <div class="icon-shape icon-lg rounded-circle bg-primary-subtle text-primary">
@@ -181,7 +181,7 @@
 
     <div class="row g-6 mb-6">
         <div class="col-xl-8 col-12">
-            <div class="card card-lg h-100">
+            <div class="card card-lg dashboard-card h-100">
                 <div class="card-body d-flex flex-column gap-4">
                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
                         <h5 class="mb-0">Arus Kas 7 Hari Terakhir</h5>
@@ -202,7 +202,7 @@
         </div>
 
         <div class="col-xl-4 col-12">
-            <div class="card card-lg h-100">
+            <div class="card card-lg dashboard-card h-100">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h5 class="mb-0">Saldo Dompet</h5>
@@ -245,7 +245,7 @@
 
     <div class="row g-6">
         <div class="col-xl-8 col-12">
-            <div class="card card-lg h-100">
+            <div class="card card-lg dashboard-card h-100">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h5 class="mb-0">Transaksi Terakhir</h5>
@@ -299,10 +299,10 @@
         </div>
 
         <div class="col-xl-4 col-12">
-            <div class="card card-lg h-100" id="notifikasi">
+            <div class="card card-lg dashboard-card h-100" id="notifikasi">
                 <div class="card-body d-flex flex-column gap-4">
                     <div class="d-flex align-items-center gap-3">
-                        <div class="icon-shape icon-lg rounded-circle bg-info-subtle text-info-emphasis">
+                        <div class="icon-shape icon-lg rounded-circle bg-primary-subtle text-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round">
